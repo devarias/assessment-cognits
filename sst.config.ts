@@ -10,6 +10,7 @@ export default {
     };
   },
   stacks(app) {
+    app.setDefaultRemovalPolicy("destroy");
     app.setDefaultFunctionProps({ runtime: "python3.12" });
     app.stack(Data).stack(API);
   }
