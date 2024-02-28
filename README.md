@@ -10,7 +10,7 @@ This README provides guidelines for the Assessment API.
 - [Routes and Methods](#routes-and-methods)
   - [Customers Routes](#customer-routes)
 - [Status Codes](#status-codes)
-- [Request exampless](#request-examples)
+- [Request examples](#request-examples)
 - [Branches](#branches)
 - [Built With](#built-with)
 - [Contributors](#contributors)
