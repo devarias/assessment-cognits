@@ -22,6 +22,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
           aws-region: ${{ vars.AWS_REGION_DEV }}
 
+      - name: Install
+        run: npm install
+
       - name: Build
         run: npm run build
 

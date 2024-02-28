@@ -22,6 +22,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_UAT }}
           aws-region: ${{ vars.AWS_REGION_UAT }}
 
+      - name: Install
+        run: npm install
+
       - name: Check Infrastructure Difference
         run: echo "Checking infrastructure difference..."
 
