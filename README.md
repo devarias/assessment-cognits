@@ -23,6 +23,10 @@ To implement this RESTful API you have to follow some instructions and requireme
 * `nodejs` => v18.0.0
 * `npm` => v8.19.4
 * `python` => v3.11
+* `pip` => v24.0
+* `boto3` => v1.34.50
+* `botocore` => v1.34.50
+* `pyjwt` => v2.8.0
 
 # Installation
 
