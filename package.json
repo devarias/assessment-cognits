@@ -4,12 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "sst dev",
+    "dev": "sst dev --stage local",
     "build": "sst build",
     "deploy-dev": "sst deploy --stage dev",
     "deploy-uat": "sst deploy --stage uat",
     "deploy-prod": "sst deploy --stage prod",
-    "remove": "sst remove",
+    "remove": "sst remove --stage local",
     "console": "sst console",
     "typecheck": "tsc --noEmit"
   },
