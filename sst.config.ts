@@ -1,4 +1,6 @@
 import { SSTConfig } from "sst";
+import { API } from "./stacks/Api";
+import { Data } from "./stacks/Data";
 
 export default {
   config(_input) {
@@ -9,5 +11,6 @@ export default {
   },
   stacks(app) {
     app.setDefaultFunctionProps({ runtime: "python3.12" });
+    app.stack(Data).stack(API);
   }
 } satisfies SSTConfig;
