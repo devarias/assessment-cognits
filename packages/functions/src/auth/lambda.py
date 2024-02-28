@@ -12,7 +12,8 @@ def handler(event: Dict, context) -> Dict:
     print(event)
 
     try:
-        jwt.decode(token, key=jwt_key, algorithms=["HS256"])
+        valid = jwt.decode(token, key=jwt_key, algorithms=["HS256"])
+        print(valid)
         auth = "Allow"
     except:
         auth = "Deny"
