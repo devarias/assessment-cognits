@@ -46,6 +46,7 @@ def handler(event: Dict, context) -> Dict:
             ],
         },
     }
+    print(authResponse)
     return authResponse
 
 
