@@ -10,12 +10,10 @@ This README provides guidelines for the Assessment API.
 - [Routes and Methods](#routes-and-methods)
   - [Customers Routes](#customer-routes)
 - [Status Codes](#status-codes)
+- [Request exampless](#request-examples)
 - [Branches](#branches)
 - [Built With](#built-with)
 - [Contributors](#contributors)
-
-# Getting Started
-
 
 <br />
 To implement this RESTful API you have to follow some instructions and requirements to use it.
@@ -65,6 +63,60 @@ To implement this RESTful API you have to follow some instructions and requireme
 |      `400`       | Response by a `get`, `post` or `put` method used in an endpoint with an specific id |
 |      `404`       | Response by a `get`, `post` or `put` method used in an endpoint with an specific id |
 <br />
+
+# Request examples
+
+* Get one customer
+```
+curl --location '{baseUrlDev}/customers/{id}' \
+--header 'Authorization: {token}'
+```
+* Get all customers with filters, querystring parameters are optional
+```
+curl --location '{baseUrlDev}/customers?postalCode=value&firstName=value&lastName=value&country=value&city=value' \
+--header 'Authorization: {token}'
+```
+* Create one customer
+```
+curl --location '{baseUrlDev}/customers' \
+--header 'Authorization: {token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "city": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "country": "string",
+    "postalCode": "string",
+    "customerId": "string"
+}'
+```
+* Update one customer
+```
+curl --location '{baseUrlDev}/customers/{id}' \
+--header 'Authorization: {token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "city": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "country": "string",
+    "postalCode": "string",
+    "customerId": "string"
+}'
+```
+* Delete one customer
+```
+curl --location --request DELETE '{baseUrlDev}/customers/{id}' \
+--header 'Authorization: {token}'
+```
+* Upload image for a customer
+```
+curl --location '{baseUrlDev}/customers/{id}/image' \
+--header 'Authorization: {token}' \
+--header 'Content-Type: image/jpeg' \
+--data 'image.jpeg'
+```
+
 
 # Branches
 
