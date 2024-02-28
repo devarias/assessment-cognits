@@ -7,9 +7,9 @@ from typing import Dict
 
 def handler(event: Dict, context) -> Dict:
     jwt_key = get_secret()
-    print(jwt_key)
 
     token = event["authorizationToken"]
+    print(event)
 
     try:
         jwt.decode(token, key=jwt_key, algorithms=["HS256"])
