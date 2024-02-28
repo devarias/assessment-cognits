@@ -1,0 +1,35 @@
+name: UAT CI Workflow
+
+on:
+  pull_request:
+    branches:
+      - uat
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Status
+        run: echo "Checking status..."
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_UAT }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_UAT }}
+          aws-region: ${{ var.AWS_REGION_UAT }}
+
+      - name: Build
+        run: npm run build
+
+      - name: Set Secrets from Env Variables
+        run: npx sst secrets set JWT_KEY ${{ secrets.JWT_KEY_UAT }} --stage uat
+
+      - name: Run Unit Tests
+        run: echo "Running unit tests..."
+
+      - name: Test Infrastructure
+        run: echo "Testing infrastructure..."

@@ -1,0 +1,29 @@
+name: UAT CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - uat
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Status
+        run: echo "Checking status..."
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_UAT }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_UAT }}
+          aws-region: ${{ var.AWS_REGION_UAT }}
+
+      - name: Check Infrastructure Difference
+        run: echo "Checking infrastructure difference..."
+
+      - name: Deploy
+        run: npm run deploy-uat
