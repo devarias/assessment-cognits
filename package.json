@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "sst dev --stage local",
-    "build": "sst build",
+    "build-dev": "sst build --stage dev",
+    "build-uat": "sst build --stage uat",
+    "build-prod": "sst build --stage prod",
     "deploy-dev": "sst deploy --stage dev",
     "deploy-uat": "sst deploy --stage uat",
     "deploy-prod": "sst deploy --stage prod",
