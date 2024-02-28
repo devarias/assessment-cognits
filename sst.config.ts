@@ -11,7 +11,7 @@ export default {
   },
   stacks(app) {
     app.setDefaultRemovalPolicy("destroy");
-    app.setDefaultFunctionProps({ runtime: "python3.12" });
+    app.setDefaultFunctionProps({ runtime: "python3.11" });
     app.stack(Data).stack(API);
   }
 } satisfies SSTConfig;
