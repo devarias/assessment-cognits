@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build --stage dev
+        run: npm run build-dev
 
       - name: Set Secrets from Env Variables
         run: npx sst secrets set JWT_KEY ${{ secrets.JWT_KEY_DEV }} --stage dev
